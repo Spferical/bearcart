@@ -269,8 +269,7 @@ class Chart(object):
             f.write(self.HTML)
 
         with open(os.path.join(html_prefix, data_path), 'w') as f:
-            json.dump(self.json_data, f, sort_keys=True, indent=4,
-                      separators=(',', ': '))
+            json.dump(self.json_data, f, sort_keys=True, separators=(',', ':'))
 
         if js_path:
             js = resource_string('bearcart', 'rickshaw.min.js').decode("utf-8")
